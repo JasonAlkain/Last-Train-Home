@@ -10,16 +10,13 @@ define devtools_overlay = "devtools_overlay"
 # The game starts here.
 
 label start:
-    scene bg room
+    # Show the devtools overlay for testing
     $ renpy.show_screen(devtools_overlay)
 
+    # Shop blackout transition
+    scene black
+    with dissolve
 
-    mc "This is the main character speaking."
-    alex "Hi, I'm Alex!"
-    sam "Hello, I'm Sam."
-    rin "Hey there, I'm Rin."
+    call rt_start
 
-    $ renpy.hide_screen(devtools_overlay)
-    stranger "Greetings, I am the Stranger."
-    
     return
