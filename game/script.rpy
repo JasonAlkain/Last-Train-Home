@@ -17,6 +17,6 @@ label start:
     scene black
     with dissolve
 
-    call rt_start
+    call rt_start from _call_rt_start
 
     return
