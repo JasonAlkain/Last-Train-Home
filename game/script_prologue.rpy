@@ -3,6 +3,7 @@
 
 define flash = Fade(0.1, 0.0, 0.5, color="#fff")
 
+
 label prologue:
     $ mc = renpy.input("What is your name?", length=32)
     $ mc = mc.strip()

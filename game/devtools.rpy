@@ -1,69 +1,52 @@
-# Dev-only overlay screen showing affinities + optional jump menu for quick testing.
+# Dev-only overlay screen showing affinities + truth_score + quick jumps.
+
+init python:
+    # Only show this overlay in developer mode.
+    if not hasattr(config, "overlay_screens"):
+        config.overlay_screens = []
+    if "devtools_overlay" not in config.overlay_screens:
+        config.overlay_screens.append("devtools_overlay")
 
 screen devtools_overlay():
-    tag devtools
-    zorder 1000
+
+    # Hide overlay in non-developer builds.
+    if not config.developer:
+        pass
 
     frame:
-        style "devtools_frame"
+        style_prefix "devtools"
         xalign 0.98
         yalign 0.02
-        xpadding 10
-        ypadding 10
 
         vbox:
-            text "Devtools Overlay" style "devtools_title"
+            text "DEV" size 16
 
-            # Display affinities for characters
-            text "Alex Affinity: [get_affinity('alex')]" style "devtools_affinity"
-            text "Sam Affinity: [get_affinity('sam')]" style "devtools_affinity"
-            text "Rin Affinity: [get_affinity('rin')]" style "devtools_affinity"
+            text "rin: [affinity['rin']]" 
+            text "sam: [affinity['sam']]" 
+            text "alex: [affinity['alex']]" 
+            text "stranger: [affinity['stranger']]"
+            text "truth: [truth_score]"
 
-            # Quick jump buttons for testing scenes
-            text "Quick Jumps:" style "devtools_title"
-            button:
-                style "devtools_button"
-                text "Jump to Alex Scene"
-                action Jump("alex_scene_label")
-            button:
-                style "devtools_button"
-                text "Jump to Sam Scene"
-                action Jump("sam_scene_label")
-            button:
-                style "devtools_button"
-                text "Jump to Rin Scene"
-                action Jump("rin_scene_label")
+            textbutton "Jump: Prologue" action Jump("prologue")
+            textbutton "Jump: Chapter 1 (Rin)" action Jump("chapter1")
 
-# Helper function to get affinity
-init python:
-    def get_affinity(name):
-        """Get the affinity of a character."""
-        global_vars = renpy.store
-        if(name in global_vars.affinity):
-            return global_vars.affinity[name]
-        else:
-            return 0
+# Styles for the overlay
+style devtools_frame is frame:
+    background "#000000CC"
+    padding (10, 10)
 
-# Styles for the devtools overlay
-style devtools_title:
-    size 24
-    bold True
+style devtools_vbox is vbox:
+    spacing 4
+
+style devtools_text is text:
+    size 14
     color "#FFFFFF"
-    xalign 0.5
-    ypadding 10
 
-style devtools_affinity:
-    size 18
-    color "#FFFFFF"
-    ypadding 5
-style devtools_button:
-    size 16
+style devtools_button is button:
+    padding (4, 8)
     background "#444444"
-    color "#FFFFFF"
-    padding (5, 10)
     hover_background "#666666"
-    hover_color "#FFFFFF"
-    ypadding 5
 
-# Example of how to show the devtools overlay
-# $ renpy.show_screen("devtools_overlay")
+style devtools_button_text is text:
+    size 12
+    color "#FFFFFF"

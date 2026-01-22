@@ -4,17 +4,18 @@
 # This file is automatically imported, so you don't need to import it yourself.
 
 
+# TODO: Finish chapters before uncommenting below
+
 label rt_start:
     # Call the prologue
     call prologue from _call_prologue
     # Call each chapter in sequence
     call chapter1 from _call_chapter1
-    return
-    call chapter2 from _call_chapter2
-    call chapter3 from _call_chapter3
+    # call chapter2 from _call_chapter2
+    # call chapter3 from _call_chapter3
 
     # Call the epilogue
-    call epilogue from _call_epilogue
+    # call epilogue from _call_epilogue
 
     # End the game
     return

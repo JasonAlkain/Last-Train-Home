@@ -6,7 +6,6 @@
 define devtools_overlay = "devtools_overlay"
 
 
-
 # The game starts here.
 
 label start:

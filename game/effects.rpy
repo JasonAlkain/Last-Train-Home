@@ -1,6 +1,4 @@
-"""
-Supernatural / visual helpers: flashes, SFX helpers, PA glitches, transitions.
-"""
+# Supernatural / visual helpers: flashes, SFX helpers, PA glitches, transitions.
 
 init python:
     def play_sfx(sfx_file):

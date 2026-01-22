@@ -11,7 +11,7 @@ label chapter1:
     scene bg train_interior
     with fade
 
-    play sound "sfx_train_hum.ogg" loop
+    play music "sfx_train_hum.ogg" loop
 
     "The doors hiss open beside me. Cold air brushes across my face."
 
@@ -34,27 +34,28 @@ label chapter1:
     # CHOICE 1 – FIRST GREETING / TONE
     ########################################
 
+    
     menu:
-        "How do you greet Rin?":
-            "Genuinely happy to see him.":
-                $ change_affinity("rin", 1)
-                $ truth_score += 1
-                mc "Rin? ...Wow. It's really you."
-                show rin happy
-                rin "Damn right it's me."
-                rin "You look like you just sprinted through three timelines to get here."
-            "Deflect with a joke.":
-                $ change_affinity("rin", 1)
-                mc "Huh. I see the city still hasn't kicked you off the night shift."
-                show rin happy
-                rin "Please. Night shift is where all the decent stories live."
-                rin "Day shift is for people who enjoy email."
-            "Keep your distance.":
-                $ change_affinity("rin", -1)
-                mc "...Hey."
-                show rin neutral
-                rin "Wow. Don't sound too excited or anything."
-                rin "Good to know I still have that effect on people."
+        "How should I greet Rin?"
+        "Genuinely happy to see him.":
+            $ change_affinity("rin", 1)
+            $ truth_score += 1
+            mc "Rin? ...Wow. It's really you."
+            show rin happy
+            rin "Damn right it's me."
+            rin "You look like you just sprinted through three timelines to get here."
+        "Deflect with a joke.":
+            $ change_affinity("rin", 1)
+            mc "Huh. I see the city still hasn't kicked you off the night shift."
+            show rin happy
+            rin "Please. Night shift is where all the decent stories live."
+            rin "Day shift is for people who enjoy email."
+        "Keep your distance.":
+            $ change_affinity("rin", -1)
+            mc "...Hey."
+            show rin neutral
+            rin "Wow. Don't sound too excited or anything."
+            rin "Good to know I still have that effect on people."
 
     "He drops into the seat across from me like it's the most natural thing in the world."
 
@@ -72,28 +73,28 @@ label chapter1:
     rin "Missed last trains, cheap coffee, terrible decisions..."
 
     menu:
-        "What memory do you lean into?":
-            "The band or project you planned together.":
-                $ change_affinity("rin", 1)
-                $ truth_score += 1
-                mc "I remember us arguing over band names all the way out there."
-                mc "You swore 'Midnight Static' was genius."
-                show rin happy
-                rin "It {i}is{/i} genius."
-                rin "You just had tragically mainstream taste."
-            "The dumb late-night diner adventures.":
-                $ change_affinity("rin", 1)
-                mc "I remember you trying to rate every late-night diner along this line."
-                mc "You nearly got us banned from at least three."
-                show rin happy
-                rin "Look, somebody had to document the 2 a.m. grilled cheese situation."
-                rin "Historical record. Very important."
-            "Downplay it all as wasted time.":
-                $ change_affinity("rin", -1)
-                mc "I remember us wasting a lot of time on trains when we should've been doing literally anything else."
-                show rin hurt
-                rin "Wow. Okay."
-                rin "Remind me not to ask for a Yelp review of our entire friendship."
+        "What memory should I lean into?"
+        "The band you planned together.":
+            $ change_affinity("rin", 1)
+            $ truth_score += 1
+            mc "I remember us arguing over band names all the way out there."
+            mc "You swore 'Midnight Static' was genius."
+            show rin happy
+            rin "It {i}is{/i} genius."
+            rin "You just had tragically mainstream taste."
+        "The dumb late-night diner adventures.":
+            $ change_affinity("rin", 1)
+            mc "I remember you trying to rate every late-night diner along this line."
+            mc "You nearly got us banned from at least three."
+            show rin happy
+            rin "Look, somebody had to document the 2 a.m. grilled cheese situation."
+            rin "Historical record. Very important."
+        "Downplay it all as wasted time.":
+            $ change_affinity("rin", -1)
+            mc "I remember us wasting a lot of time on trains when we should've been doing literally anything else."
+            show rin hurt
+            rin "Wow. Okay."
+            rin "Remind me not to ask for a Yelp review of our entire friendship."
 
     "His laughter hangs between us for a moment, soft and familiar."
 
@@ -125,31 +126,31 @@ label chapter1:
     ########################################
 
     menu:
-        "Why did you bail on Rin?":
-            "Admit you were scared and ran.":
-                $ change_affinity("rin", 1)
-                $ truth_score += 1
-                mc "I was scared."
-                mc "Of failing. Of you seeing how much of a mess I was."
-                mc "So I did what I always do."
-                mc "I ran."
-                show rin hurt
-                rin "You could've just said that, you know."
-                rin "I wouldn't have magically fixed you, but at least I would've known where you went."
-            "Say you would've dragged him down.":
-                $ change_affinity("rin", 1)
-                mc "I was in a bad place. Everything I touched felt like it was falling apart."
-                mc "I thought if I stuck around, I'd just drag you down with me."
-                show rin serious
-                rin "You decided that for me."
-                rin "That's kind of the problem."
-                rin "You turned me into some fragile side character in your disaster arc."
-            "Deflect it as 'life happens'.":
-                $ change_affinity("rin", -1)
-                mc "Life happened. People drift. We weren't kids anymore."
-                show rin hurt
-                rin "Yeah. People drift."
-                rin "It's just wild how fast {i}you{/i} managed it."
+        "Why did you bail on Rin?"
+        "Admit you were scared and ran.":
+            $ change_affinity("rin", 1)
+            $ truth_score += 1
+            mc "I was scared."
+            mc "Of failing. Of you seeing how much of a mess I was."
+            mc "So I did what I always do."
+            mc "I ran."
+            show rin hurt
+            rin "You could've just said that, you know."
+            rin "I wouldn't have magically fixed you, but at least I would've known where you went."
+        "Say you would've dragged him down.":
+            $ change_affinity("rin", 1)
+            mc "I was in a bad place. Everything I touched felt like it was falling apart."
+            mc "I thought if I stuck around, I'd just drag you down with me."
+            show rin serious
+            rin "You decided that for me."
+            rin "That's kind of the problem."
+            rin "You turned me into some fragile side character in your disaster arc."
+        "Deflect it as 'life happens'.":
+            $ change_affinity("rin", -1)
+            mc "Life happened. People drift. We weren't kids anymore."
+            show rin hurt
+            rin "Yeah. People drift."
+            rin "It's just wild how fast {i}you{/i} managed it."
 
     "The hum of the train feels louder now. The clock above us still glows the same dead time."
 
@@ -201,9 +202,9 @@ label chapter1:
         rin "That's something, I guess."
 
     "The train slows. The world outside resolves into another late-night platform."
-
-    scene bg platform_ext
-    with dissolve
+    
+    # scene bg platform_ext
+    # with dissolve
 
     show rin neutral at center
 
@@ -224,12 +225,13 @@ label chapter1:
 
     "He steps out onto the platform and is gone, swallowed by silhouettes and neon and fog."
 
+
     ########################################
     # STRANGER’S BUTTON – HINT AT IMPACT
     ########################################
 
-    scene bg train_interior
-    with dissolve
+    # scene bg train_interior
+    # with dissolve
 
     show stranger neutral at right
 
@@ -266,7 +268,7 @@ label chapter1:
 
     "The train rolls on."
 
-    stop sound fadeout 1.0
+    stop music fadeout 1.0
 
     # End of Chapter 1 – return control to routes.rpy
     return
