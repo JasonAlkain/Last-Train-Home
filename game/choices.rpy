@@ -1,6 +1,4 @@
-"""
-Small helpers for logging choices and adjusting affinity in one place.
-"""
+# Small helpers for logging choices and adjusting affinity in one place.
 
 init python:
     def log_choice(choice_text):

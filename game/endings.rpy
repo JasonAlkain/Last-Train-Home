@@ -1,37 +1,15 @@
-"""
-Final “terminal” scene, player’s last choice, and ending label(s).
-"""
+# Final “terminal” scene, player’s last choice, and ending label(s).
 
 label ending_scene:
     # Content for the ending scene goes here
-    # Determine which ending to jump to based on affinitys
-    # if alex_affinity >= 70:
-    #     # Set flag for good ending
-    # elif alex_affinity <= 30:
-    #     # Set flag for bad ending
-    # else:
-    #     # Set flag for neutral ending
-
-    # if rin_affinity >= 70:
-    #     # Set flag for good ending
-    # elif rin_affinity <= 30:
-    #     # Set flag for bad ending
-    # else:
-    #     # Set flag for neutral ending
-
-    # if sam_affinity >= 70:
-    #     # Set flag for good ending
-    # elif sam_affinity <= 30:
-    #     # Set flag for bad ending
-    # else:
-    #     # Set flag for neutral ending
-
-    # if get_flag("good_ending"):
-    #     jump good_ending
-    # elif get_flag("bad_ending"):
-    #     jump bad_ending
-    # else:
-    #     jump neutral_ending
+    # get total affinity
+    $ total_affinity = get_affinity("rin") + get_affinity("sam") + get_affinity("alex")
+    if total_affinity >= 15:
+        jump good_ending
+    elif total_affinity <= 5:
+        jump bad_ending
+    else:
+        jump neutral_ending
 
     return
 

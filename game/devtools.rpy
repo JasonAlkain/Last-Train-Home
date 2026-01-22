@@ -1,6 +1,4 @@
-"""
-Dev-only overlay screen showing affinities + optional jump menu for quick testing.
-"""
+# Dev-only overlay screen showing affinities + optional jump menu for quick testing.
 
 screen devtools_overlay():
     tag devtools
@@ -38,15 +36,11 @@ screen devtools_overlay():
 
 # Helper function to get affinity
 init python:
-    def get_affinity(character):
+    def get_affinity(name):
         """Get the affinity of a character."""
         global_vars = renpy.store
-        if character == "alex":
-            return global_vars.alex_affinity
-        elif character == "sam":
-            return global_vars.sam_affinity
-        elif character == "rin":
-            return global_vars.rin_affinity
+        if(name in global_vars.affinity):
+            return global_vars.affinity[name]
         else:
             return 0
 

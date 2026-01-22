@@ -1,6 +1,4 @@
-"""
-Defines all Characters (MC, Alex, Sam, Rin, Stranger), name colors, and voice.
-"""
+# Defines all Characters (MC, Alex, Sam, Rin, Stranger), name colors, and voice.
 
 # =========================
 # Main Characters

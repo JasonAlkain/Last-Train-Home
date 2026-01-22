@@ -1,6 +1,4 @@
-"""
-Text/UI accessibility tweaks: font size, contrast flags, and apply function.
-"""
+# Text/UI accessibility tweaks: font size, contrast flags, and apply function.
 
 style default:
     font "DejaVuSans.ttf"
